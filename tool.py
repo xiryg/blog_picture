@@ -166,6 +166,7 @@ def cut_photo():
         print("source directory not exist!")
 
 
+
 def git_operation():
     '''
     git 命令行函数，将仓库提交
@@ -173,9 +174,12 @@ def git_operation():
     ----------
     需要安装git命令行工具，并且添加到环境变量中
     '''
-    os.system('git add --all')
-    os.system('git commit -m "add photos"')
-    os.system('git push origin master')
+    remote_repo = "https://github.com/xiryg/blog_picture.git"  # 修改为您的远程仓库URL
+    branch_name = "main"  # 修改为您的分支名称
+    os.system(f'git remote set-url origin {remote_repo}')
+    os.system(f'git add --all')
+    os.system(f'git commit -m "add photos"')
+    os.system(f'git push origin {branch_name}')
 
 
 def bubble(bubbleList):
